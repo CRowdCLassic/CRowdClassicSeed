@@ -1,7 +1,7 @@
-crowdcoin-seeder
+crowdclassic-seeder
 ===============
 
-Crowdcoin-seeder is a crawler for the Crowdcoin network, which exposes a list
+CRowdCLassic-seeder is a crawler for the CRowdCLassic network, which exposes a list
 of reliable nodes via a built-in DNS server.
 
 Features:
