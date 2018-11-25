@@ -400,8 +400,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed.crowdcoin.site", ""};
-static const string testnet_seeds[] = {"testnet-seed.crowdcoin.site",  ""};
+static const string mainnet_seeds[] = {"seed.crcl.dns-cloud.net", ""};
+static const string testnet_seeds[] = {"testnet-seed.crcl.dns-cloud.net",  ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
