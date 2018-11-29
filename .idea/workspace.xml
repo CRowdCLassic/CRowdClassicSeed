@@ -116,7 +116,7 @@
       <find>pch</find>
     </findStrings>
     <replaceStrings>
-      <replace>Crowdcoin</replace>
+      <replace>CRowdCLassic</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
