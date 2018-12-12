@@ -8,6 +8,9 @@
 
 #define BITCOIN_SEED_NONCE 0x0539a019ca550825ULL
 
+// Nodes older than this protocol version will be banned and marked bad
+static const int MIN_VERSION = 70207;
+
 using namespace std;
 
 class CNode {
