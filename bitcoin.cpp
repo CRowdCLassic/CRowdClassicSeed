@@ -6,7 +6,7 @@
 #include "serialize.h"
 #include "uint256.h"
 
-#define BITCOIN_SEED_NONCE  0x0539a019ca550825ULL
+#define BITCOIN_SEED_NONCE 0x0539a019ca550825ULL
 
 using namespace std;
 
@@ -279,15 +279,26 @@ public:
 bool TestNode(const CService &cip, int &ban, int &clientV, std::string &clientSV, int &blocks, vector<CAddress>* vAddr) {
   try {
     CNode node(cip, vAddr);
-    bool ret = node.Run();
-    if (!ret) {
-      ban = node.GetBan();
-    } else {
-      ban = 0;
-    }
+    
+    bool ret = node.Run();   
     clientV = node.GetClientVersion();
     clientSV = node.GetClientSubVersion();
     blocks = node.GetStartingHeight();
+    
+    if (!ret) {
+      ban = node.GetBan();
+    } else {
+//      ban = 0;
+      if (clientV < MIN_VERSION) {
+        ret = 0;
+        ban = 1;
+      } else {
+        ban = 0;
+      }
+    }
+//    clientV = node.GetClientVersion();
+//    clientSV = node.GetClientSubVersion();
+//    blocks = node.GetStartingHeight();
 //  printf("%s: %s!!!\n", cip.ToString().c_str(), ret ? "GOOD" : "BAD");
     return ret;
   } catch(std::ios_base::failure& e) {
